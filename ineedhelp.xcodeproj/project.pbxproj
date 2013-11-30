@@ -24,6 +24,7 @@
 		6B4F0B4B18452F730077A33E /* LTUser+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B4F0B4A18452F730077A33E /* LTUser+Add.m */; };
 		6B4F0B4D184530700077A33E /* LTUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B4F0B4C184530700077A33E /* LTUser.m */; };
 		6B898A91184A5958006FBF88 /* nice-view.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6B898A90184A5958006FBF88 /* nice-view.jpg */; };
+		6B898A95184A7CC7006FBF88 /* LTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B898A94184A7CC6006FBF88 /* LTDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		6B4F0B4E184539C20077A33E /* LTUser_Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTUser_Profile.h; sourceTree = "<group>"; };
 		6B4F0B4F184540120077A33E /* LTChartViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTChartViewProtocol.h; sourceTree = "<group>"; };
 		6B898A90184A5958006FBF88 /* nice-view.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "nice-view.jpg"; path = "../../../nice-view.jpg"; sourceTree = "<group>"; };
+		6B898A93184A7CC6006FBF88 /* LTDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTDetailViewController.h; sourceTree = "<group>"; };
+		6B898A94184A7CC6006FBF88 /* LTDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 				6B4F0B4A18452F730077A33E /* LTUser+Add.m */,
 				6B4927DC1844E09E00458BFA /* LTAppDelegate.m */,
 				6B4927DE1844E09E00458BFA /* Main.storyboard */,
+				6B898A93184A7CC6006FBF88 /* LTDetailViewController.h */,
+				6B898A94184A7CC6006FBF88 /* LTDetailViewController.m */,
 				6B4927E11844E09E00458BFA /* LTViewController.h */,
 				6B4927E21844E09E00458BFA /* LTViewController.m */,
 				6B4F0B4E184539C20077A33E /* LTUser_Profile.h */,
@@ -277,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B4F0B4518452A730077A33E /* LTViewController.m in Sources */,
+				6B898A95184A7CC7006FBF88 /* LTDetailViewController.m in Sources */,
 				6B4927DD1844E09E00458BFA /* LTAppDelegate.m in Sources */,
 				6B4F0B4B18452F730077A33E /* LTUser+Add.m in Sources */,
 				6B4927D91844E09E00458BFA /* main.m in Sources */,

@@ -16,10 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="sEX-zy-LeI">
-                                <rect key="frame" x="0.0" y="57" width="320" height="263"/>
+                            <tableView clipsSubviews="YES" contentMode="top" fixedFrame="YES" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="sEX-zy-LeI">
+                                <rect key="frame" x="0.0" y="84" width="320" height="208"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.80639936779999999" green="1" blue="0.80846658199999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="sectionIndexColor" red="1" green="0.99606667370000002" blue="0.70251447229999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="vXZ-lx-hvc" id="0hY-92-K4x"/>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="wnm-Tc-Pdd"/>
@@ -36,11 +39,39 @@
                     <connections>
                         <outlet property="girlImageView" destination="htX-f8-2ex" id="fHy-zv-Clm"/>
                         <outlet property="topTableView" destination="sEX-zy-LeI" id="8ex-da-eiJ"/>
+                        <segue destination="fEO-h3-L3M" kind="push" identifier="detailPush" id="iSm-nD-qBq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="837" y="59"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="eex-wQ-ew5">
+            <objects>
+                <viewController id="fEO-h3-L3M" customClass="LTDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p0z-jv-Ilf"/>
+                        <viewControllerLayoutGuide type="bottom" id="rcr-c9-tvM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KWv-Bj-cMp" customClass="LTDetailViewCont">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="here are things" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ifz-fx-DDk">
+                                <rect key="frame" x="40" y="169" width="114" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8up-zA-hAc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0UC-yt-mPl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1284" y="54"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RnX-YN-hxO">

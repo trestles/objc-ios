@@ -10,6 +10,8 @@
 #import "LTUser.h"
 #import "LTUser+Add.h"
 #import "LTUser_Profile.h" // extension
+#import "LTDetailViewController.h"
+//#import <QuartzCore/QuartzCore.h>
 
 /*
   Categories - "Any Methods that you declare in a category will be available to all instances of the original class, as well as subclasses 
@@ -51,6 +53,11 @@
        - creating custom UITableViewCell
      
      */
+    
+    
+    // http://stackoverflow.com/a/18926005/152825
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+
     NSDictionary *person1=@{@"mainTitleKey": @"Tom Curren", @"secondaryTitleKey": @"A Surfer in Santa Barbara"};
     NSDictionary *person2=@{@"mainTitleKey": @"Yoco Koko", @"secondaryTitleKey": @"A Model in Paris"};
     NSDictionary *person3=@{@"mainTitleKey": @"Haruki Murakami", @"secondaryTitleKey": @"An Author in Tokyo"};
@@ -66,13 +73,27 @@
     
     self.content = @[person1, person2, person3];
     
+    // lets set a border on the topTableView
+    self.topTableView.layer.borderColor = [UIColor greenColor].CGColor;
+    self.topTableView.layer.borderWidth = 3.0f;
+    
+    //self.tableView.contentInset = UIEdgeInsetsMake(-20, 0, -20, 0);
+    
+    
     self.girlImageView.image=[UIImage imageNamed:@"nice-view.jpg"];
     self.girlImageView.userInteractionEnabled=true;
     
     
+    // http://stackoverflow.com/questions/3330378/cocoa-touch-how-to-change-uiviews-border-color-and-thickness
+    self.girlImageView.layer.borderColor = [UIColor redColor].CGColor;
+    self.girlImageView.layer.borderWidth = 3.0f;
+    
     /*
        UISwipeGestureRecognizer - see Stanford Class for a discussion of this
         -> be sure to set UserInteractionEnabled
+     
+     
+     
      
      */
 
@@ -167,10 +188,26 @@
     
 }
 
+  /*
+    IIA73-4 segues on a detail view controller
+   
+   */
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"you selected me");
+    [self performSegueWithIdentifier:@"detailPush" sender:self.content[indexPath.row]];
   }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+     // IIA74 - specify the View Controller in question
+    if ([[segue identifier] isEqualToString:@"detailPush"])
+    {
+        LTDetailViewController *vc = [segue destinationViewController];
+        NSDictionary *personNew=sender;
+        [vc setPerson:personNew];
+    }
+}
 -(void) handleSwipe:(id)sender
 {
     NSLog(@"you handled the swipe here");
@@ -182,6 +219,13 @@
     /*
      
       C158-159
+        Recipes:
+         1. Fading A View In and Out C159
+         2. Swapping Views C161
+         3. Flipping Views C162
+         4. Core Animation Transitions C163
+         5. Bouncing Views as they appear C165
+         6. Image View Animations C166
      */
     
     

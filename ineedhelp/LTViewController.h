@@ -17,6 +17,8 @@
 */
 
 @property (weak, nonatomic) IBOutlet UIImageView *girlImageView;
+
+/* UITableView conforms to NSCoding, NSCoding(UIScrollView), NSCoding(UIView), UIAppearance (UIView), UIAppearanceContainer (UIView), UIDynamicItem (UIView), NSObject */
 @property (weak, nonatomic) IBOutlet UITableView *topTableView;
 
 /* IIA100 
