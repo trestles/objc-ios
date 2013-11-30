@@ -46,15 +46,18 @@
    by default, these accessor methods are synthesized automatically for by the compiler D44
  */
 
+@property (nonatomic, copy) void (^getMeSomeFunny)(void);
 
 // declarations
 // "objects can interact with each other by sending messages on that object" D17
 -(void) saySomething;
+
 -(id)initWithFirstName:(NSString *)theFirstName AndLastName:(NSString *)theLastName;//(NSString *)theFirstName AndLastName:(NSString *)theLastName;
 
 // Class Method Example
 +(void) showMutableStringTest;
-//-(int)numberOfSegments; doesn't need to be declared
+// +(void) runThisBlock:(void (^) (void))myBlock;
+//-(int)numberOfSegments; does;n't need to be declared
 
 
 

@@ -25,6 +25,14 @@ NSString *_city; // can create a local instance variable here (can also create a
     return self;
 }
 
+/*
+-(void)runThisBlock(void (^)(void))myBlock{
+    NSLog(@"lets do this first");
+    myBlock();
+    
+}
+ */
+
 -(NSString *)byLine
 {
     if(!_byLine){
@@ -64,9 +72,37 @@ NSString *_city; // can create a local instance variable here (can also create a
     
     NSLog(@"I want to show the change %@", [self firstName]);
     
+    
+   //  http://fuckingblocksyntax.com/
+   /*    
+
+    LOCAL VARIABLE:
+    returnType (^blockName)(parameterTypes) = ^returnType(parameters) {...};
+
+    PROPERTY:
+    @property (nonatomic, copy) returnType (^blockName)(parameterTypes);
+
+    METHOD PARAMETER:
+    - (void)someMethodThatTakesABlock:(returnType (^)(parameterTypes))blockName {...}
+    
+    ARGUMENT TO A METHOD CALL
+    [someObject someMethodThatTakesABlock: ^returnType (parameters) {...}];
+    
+    TYPEDEF
+    typedef returnType (^TypeName)(parameterTypes);
+    TypeName blockName = ^(parameters) {...}
+    
+
+    */
     // variables can also by __strong or __weak D62
     //NSString * __weak myMood=[[NSString alloc] initWithString:@"happy" ];
     //NSLog(@"My mood is %@", myMood);
+    
+    void (^blockName)(NSString *)=^(NSString *myString){
+        NSLog(@"here is my string: %@", myString);
+    };
+
+    blockName(@"and other thigns");
     
     
     void (^simpleBlock)(void)=^{  // defining a block just uses carat symbol D104
