@@ -28,4 +28,10 @@
  
  */
 @property (nonatomic, strong) NSArray *content;
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *loginButton;
+
+
+- (IBAction)showLoginModal:(id)sender;
+
 @end

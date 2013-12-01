@@ -252,4 +252,10 @@
 }
 
 
+- (IBAction)showLoginModal:(id)sender {
+    NSLog(@"will show loginModal here");
+    [self performSegueWithIdentifier:@"loginSegue" sender:sender];
+
+
+}
 @end

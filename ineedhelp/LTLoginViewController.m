@@ -1,19 +1,18 @@
 //
-//  LTDetailViewController.m
+//  LTLoginViewController.m
 //  ineedhelp
 //
 //  Created by jonathan twaddell on 11/30/13.
 //  Copyright (c) 2013 Trestles. All rights reserved.
 //
 
-#import "LTDetailViewController.h"
+#import "LTLoginViewController.h"
 
-@interface LTDetailViewController ()
+@interface LTLoginViewController ()
 
 @end
 
-@implementation LTDetailViewController
-
+@implementation LTLoginViewController
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,9 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.nameLabel.text=self.person[@"mainTitleKey"];
-	//NSLog(@"here i am in viewDidLoad with %@", self.person[@"mainTitleKey"]);
-    // Do any additional setup after loading the view.
+	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,5 +34,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)pressedLoginBtn:(id)sender {
+    NSLog(@"you pressed the login Button name: %@ and pwd: %@", self.nameTextField.text, self.pwdTextField.text);
 
+}
 @end

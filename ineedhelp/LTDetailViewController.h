@@ -12,4 +12,5 @@
 
 @property (nonatomic, copy) NSDictionary *person;
 
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @end
