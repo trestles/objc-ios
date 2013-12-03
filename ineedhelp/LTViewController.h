@@ -30,8 +30,10 @@
 @property (nonatomic, strong) NSArray *content;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *loginButton;
+@property (weak, nonatomic) IBOutlet UIButton *mapViewButton;
 
 
 - (IBAction)showLoginModal:(id)sender;
+- (IBAction)goToMapView:(id)sender;
 
 @end

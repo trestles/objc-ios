@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface LTLoginViewController : UIViewController
+
+@property NSURLConnection *myConn;
+
+
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 
 @property (weak, nonatomic) IBOutlet UITextField *pwdTextField;

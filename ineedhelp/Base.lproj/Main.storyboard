@@ -9,8 +9,8 @@
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="LTViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Kkh-7v-L7b"/>
-                        <viewControllerLayoutGuide type="bottom" id="XHl-zM-Jo9"/>
+                        <viewControllerLayoutGuide type="top" id="I7G-mH-iWD"/>
+                        <viewControllerLayoutGuide type="bottom" id="SVS-IP-xuC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -29,9 +29,19 @@
                                 </connections>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="htX-f8-2ex">
-                                <rect key="frame" x="40" y="341" width="240" height="128"/>
+                                <rect key="frame" x="40" y="295" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbt-E0-YWg">
+                                <rect key="frame" x="20" y="443" width="116" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="map-view">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToMapView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9zN-nh-sDc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -45,9 +55,11 @@
                     <connections>
                         <outlet property="girlImageView" destination="htX-f8-2ex" id="fHy-zv-Clm"/>
                         <outlet property="loginButton" destination="FFI-IN-ehg" id="s7v-Me-f8H"/>
+                        <outlet property="mapViewButton" destination="gbt-E0-YWg" id="wcO-a2-Zot"/>
                         <outlet property="topTableView" destination="sEX-zy-LeI" id="8ex-da-eiJ"/>
                         <segue destination="fEO-h3-L3M" kind="push" identifier="detailPush" id="iSm-nD-qBq"/>
                         <segue destination="b5l-sF-0oQ" kind="modal" identifier="loginSegue" id="8Ab-L7-p6t"/>
+                        <segue destination="ZnK-Xw-ZWH" kind="push" identifier="pushMapView" id="S27-ze-dYc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -59,8 +71,8 @@
             <objects>
                 <viewController id="fEO-h3-L3M" customClass="LTDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="p0z-jv-Ilf"/>
-                        <viewControllerLayoutGuide type="bottom" id="rcr-c9-tvM"/>
+                        <viewControllerLayoutGuide type="top" id="MqM-5N-K2Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZIB-cI-V9L"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KWv-Bj-cMp" customClass="LTDetailViewCont">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -90,8 +102,8 @@
             <objects>
                 <viewController id="b5l-sF-0oQ" customClass="LTLoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="yM9-LF-tKe"/>
-                        <viewControllerLayoutGuide type="bottom" id="LDi-og-Btv"/>
+                        <viewControllerLayoutGuide type="top" id="3bE-uO-X7z"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qht-0V-ljK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pxN-a2-M94">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -142,6 +154,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZi-8K-yE4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1441" y="700"/>
+        </scene>
+        <!--Map List View Controller-->
+        <scene sceneID="frc-MD-Ek0">
+            <objects>
+                <viewController id="ZnK-Xw-ZWH" customClass="LTMapListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jXq-dD-bev"/>
+                        <viewControllerLayoutGuide type="bottom" id="gU5-xS-bT5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ttj-ns-9AL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YD5-bM-6MB">
+                                <rect key="frame" x="0.0" y="96" width="169" height="288"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nGJ-G0-yGI"/>
+                    <connections>
+                        <outlet property="mapView" destination="YD5-bM-6MB" id="VjG-O7-5HL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qHp-Er-6N2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1432" y="1380"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RnX-YN-hxO">

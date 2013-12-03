@@ -258,4 +258,10 @@
 
 
 }
+
+- (IBAction)goToMapView:(id)sender {
+    NSLog(@"about to go to MapView");
+    [self performSegueWithIdentifier:@"pushMapView" sender:sender];
+
+}
 @end
