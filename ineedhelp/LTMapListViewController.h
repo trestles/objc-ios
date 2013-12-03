@@ -16,5 +16,7 @@
 
 @interface LTMapListViewController : UIViewController <MKMapViewDelegate>
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) UIView *mapViewContainer;
+- (IBAction)expandMapView:(id)sender;
 
 @end

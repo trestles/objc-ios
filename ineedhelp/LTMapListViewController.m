@@ -41,9 +41,14 @@
      
     */
     
+
+    self.mapViewContainer=[[UIView alloc] initWithFrame:CGRectMake(50.0f, 50.0f, 200.0f, 200.0f)];
+    [self.mapViewContainer addSubview:self.mapView];
+    [self.view addSubview:self.mapViewContainer];
     
-  CGRect myRect=CGRectMake(30.0f, 10.0f, 200.0f, 200.0f);
-  self.mapView.frame = myRect;
+    
+//  CGRect myRect=CGRectMake(30.0f, 10.0f, 200.0f, 400.0f);
+ // self.mapView.frame = myRect;
   
     /*
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(30)-[mapView(200)]" options:0 metrics:nil views:@{@"mapView" : self.mapView}]];
@@ -64,4 +69,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)expandMapView:(id)sender {
+    NSLog(@"about to expand MapView");
+    
+    
+    [UIView animateWithDuration:2
+                     animations:^{
+                         //moneyHolder.frame = targetFrame;
+                         CGRect myRect=CGRectMake(30.0f, 150.0f, 200.0f, 200.0f);
+                         self.mapView.frame = myRect;
+
+                     }
+                     completion:^(BOOL finished){
+                         NSLog(@"done");
+                     }
+     ];
+
+}
 @end
